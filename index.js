@@ -13,7 +13,7 @@ bot.on('message', message => {
             channel.join()
             .then(connection => {
                 const dispatcher = connection.play('1.mp3');
-                dispatcher.on("end", end => {
+                dispatcher.on("finish", finish => {
                     channel.leave();
                 })
             })
